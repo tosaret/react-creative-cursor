@@ -221,6 +221,10 @@ export const Cursor: FC<CursorProps> = ({
       setFromEvent(e);
     });
 
+    window.addEventListener('drag', e => {
+      setFromEvent(e);
+    });
+
     document.body.addEventListener('mouseenter', (e: MouseEvent) => {
       if (e.target instanceof HTMLElement && cursor.current) {
         gsap.to(`#${cursor.current.id}`, {
